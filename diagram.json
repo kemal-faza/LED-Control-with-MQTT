@@ -1,0 +1,36 @@
+{
+	"version": 1,
+	"author": "Muhamad Kemal Faza",
+	"editor": "wokwi",
+	"parts": [
+		{
+			"type": "board-esp32-devkit-c-v4",
+			"id": "esp",
+			"top": 0,
+			"left": -4.76,
+			"attrs": {}
+		},
+		{
+			"type": "wokwi-led",
+			"id": "led1",
+			"top": -32.4,
+			"left": 272.6,
+			"attrs": { "color": "red" }
+		},
+		{
+			"type": "wokwi-resistor",
+			"id": "r1",
+			"top": 157.55,
+			"left": 182.4,
+			"attrs": { "value": "1000" }
+		}
+	],
+	"connections": [
+		["esp:TX", "$serialMonitor:RX", "", []],
+		["esp:RX", "$serialMonitor:TX", "", []],
+		["esp:GND.2", "led1:C", "black", ["v0", "h187.24"]],
+		["esp:2", "r1:1", "green", ["h0"]],
+		["r1:2", "led1:A", "green", ["v0", "h56.4"]]
+	],
+	"dependencies": {}
+}
